@@ -38,7 +38,7 @@ hbs.registerHelper('screamIt' , (text) => {
 
 app.get('/', (req ,res) => {
   res.render('home.hbs' , {
-    pageTitle : 'About Page',
+    pageTitle : 'Home Page',
     welcomeMessage : 'Welcome'
   });
 });
@@ -46,10 +46,18 @@ app.get('/', (req ,res) => {
 // app.use to create middleware
 // all templates are in views for hbs
 // res.render to compile the templates
+// app.get to register an url
+// after app.get, create the hbs file in views
 
 app.get('/about', (req ,res) => {
   res.render('about.hbs' , {
     pageTitle : 'About Page'
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs' , {
+    pageTitle : 'Projects Page'
   });
 });
 
